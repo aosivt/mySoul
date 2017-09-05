@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {MdButtonModule,MdTableModule, MdInputModule,MdSortModule,MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MdButtonModule,MdTableModule, MdInputModule,MdSortModule,MdDialogModule, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TableBasicExample } from './tab/tab.component';
 import { TableFilteringExample } from './tabFilter/tableFilteringExample.component';
 import { TableSortingExample } from './tabSort/tableSort.component';
-import { DialogOverviewExample } from './dialog/dialog.component';
+import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { DialogOverviewExample } from './dialog/dialog.component';
     TableFilteringExample,
     TableSortingExample,
     DialogOverviewExample,
+    DialogOverviewExampleDialog,
     TableBasicExample
   ],
   imports: [
@@ -24,12 +25,21 @@ import { DialogOverviewExample } from './dialog/dialog.component';
     BrowserAnimationsModule,
 
     MdDialogModule,
+
+    MdDialogRef,
+    MD_DIALOG_DATA,
     MdButtonModule,
     MdInputModule,
     MdSortModule,
     MdTableModule
   ],
   providers: [],
-  bootstrap: [AppComponent,TableBasicExample,TableFilteringExample,TableSortingExample]
+  bootstrap: [
+    AppComponent,
+    TableBasicExample,
+    TableFilteringExample,
+    DialogOverviewExample,
+    DialogOverviewExampleDialog,
+    TableSortingExample]
 })
 export class AppModule { }
