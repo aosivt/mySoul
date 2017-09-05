@@ -8,9 +8,8 @@ import {MdButtonModule,
         MdInputModule,
         MdSortModule,
         MdDialogModule,
-        
-        MdDialogRef,
-        MD_DIALOG_DATA
+
+
       } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -34,8 +33,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
 
     MdDialogModule,
 
-    MdDialogRef,
-    MD_DIALOG_DATA,
+
     MdButtonModule,
     MdInputModule,
     MdSortModule,
