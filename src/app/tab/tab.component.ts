@@ -36,10 +36,16 @@ const data: Element[] = [
 export class ExampleDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */
 
+  checkAddDataTemp(checkData:Element[]):Element[] {
+    checkData.push({position: 1, name: 'Ну вот вроде как получилось)))', weight: 555, symbol: 'ЕЕЕЕ'},);
+    return checkData;
+  }
+
   connect(): Observable<Element[]> {
     var dataTemp:Element[];
     dataTemp = data;
-    dataTemp.push({position: 22, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},);
+    dataTemp = this.checkAddDataTemp(dataTemp);
+    dataTemp.push({position: 0, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},);
     return Observable.of(dataTemp);
   }
 
