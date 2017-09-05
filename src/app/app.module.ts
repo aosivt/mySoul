@@ -6,6 +6,8 @@ import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {MdButtonModule,
         MdTableModule,
+        MdCheckboxModule,
+        MdTabsModule,
         MdInputModule,
         MdSortModule,
         MdDialogModule
@@ -32,6 +34,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     MdDialogModule,
     MdButtonModule,
     MdInputModule,
+    MdCheckboxModule,
     MdSortModule,
     FormsModule,
     MdTableModule

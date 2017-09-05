@@ -1,1 +1,13 @@
 <button md-raised-button color="primary" (click)="openDialog()">Pick one</button>
+
+
+<label>Show content below:
+  <md-checkbox ng-model="showSpecial">Check me!</md-checkbox>
+</label>
+
+<md-tab-group ng-show="showSpecial" id="special">
+  <md-tab label="Диалог"><app-test-dialog></app-test-dialog></md-tab>
+  <md-tab label="Таблица"><app-tab></app-tab></md-tab>
+  <md-tab label="Таблица с фильтром"><app-tab-filter></app-tab-filter></md-tab>
+  <md-tab label="Таблица с сортировкой"><app-tab-sort></app-tab-sort></md-tab>
+</md-tab-group>
