@@ -5,7 +5,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
  * @title Dialog Overview
  */
 @Component({
-  selector: 'app-root',
+  selector: 'app-test-dialog',
   templateUrl: 'dialog-overview-example.html'
 })
 export class DialogOverviewExample {
