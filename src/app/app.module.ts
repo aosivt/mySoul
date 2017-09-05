@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {MdButtonModule,MdTableModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { TableBasicExample } from './tab/table-basic-example';
+import { TableBasicExample } from './tab/tab.component';
 
 @NgModule({
   declarations: [
