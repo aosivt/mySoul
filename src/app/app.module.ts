@@ -7,9 +7,7 @@ import {MdButtonModule,
         MdTableModule,
         MdInputModule,
         MdSortModule,
-        MdDialogModule,
-
-
+        MdDialogModule
       } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -30,10 +28,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-
     MdDialogModule,
-
-
     MdButtonModule,
     MdInputModule,
     MdSortModule,
