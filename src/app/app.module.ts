@@ -19,6 +19,6 @@ import { TableBasicExample } from './tab/tab.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,TableBasicExample]
 })
 export class AppModule { }
