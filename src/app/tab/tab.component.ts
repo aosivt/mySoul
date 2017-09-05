@@ -24,6 +24,7 @@ export interface Element {
 }
 
 const data: Element[] = [
+  {position: 0, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -55,7 +56,7 @@ const data: Element[] = [
 export class ExampleDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */
   addDataElement(){
-  data.push({position: 0, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'});  
+  data.push({position: 0, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},);
   }
   connect(): Observable<Element[]> {
     return Observable.of(data);
