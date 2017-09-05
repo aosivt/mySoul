@@ -22,7 +22,7 @@
         "styles.css"
       ],
       "scripts": [
-        "webcomponents-lite.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

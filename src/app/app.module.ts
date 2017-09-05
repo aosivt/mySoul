@@ -35,6 +35,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     MdButtonModule,
     MdInputModule,
     MdCheckboxModule,
+    MdTabsModule,
     MdSortModule,
     FormsModule,
     MdTableModule
