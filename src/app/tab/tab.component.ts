@@ -24,7 +24,7 @@ export interface Element {
 }
 
 const data: Element[] = [
-  {position: 21, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},
+
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -45,6 +45,7 @@ const data: Element[] = [
   {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
+  {position: 21, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},
 ];
 
 /**
