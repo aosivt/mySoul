@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
@@ -32,6 +33,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     MdButtonModule,
     MdInputModule,
     MdSortModule,
+    FormsModule,
     MdTableModule
   ],
   providers: [],
