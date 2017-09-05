@@ -24,7 +24,7 @@ export interface Element {
 }
 
 const data: Element[] = [
-  {position: 21, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},
+  {position: 21, name: 'того', weight: 555, symbol: 'ЕЕЕЕ'},
 ];
 
 /**
@@ -45,7 +45,7 @@ export class ExampleDataSource extends DataSource<any> {
     var dataTemp:Element[];
     dataTemp = data;
     dataTemp = this.checkAddDataTemp(dataTemp);
-    dataTemp.push({position: 0, name: 'Ебать того', weight: 555, symbol: 'ЕЕЕЕ'},);
+    dataTemp.push({position: 0, name: 'ого', weight: 555, symbol: 'ЕЕЕЕ'},);
     return Observable.of(dataTemp);
   }
 
