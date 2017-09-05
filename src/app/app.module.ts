@@ -8,7 +8,7 @@ import {MdButtonModule,
         MdInputModule,
         MdSortModule,
         MdDialogModule,
-        MdDialog,
+        
         MdDialogRef,
         MD_DIALOG_DATA
       } from '@angular/material';
@@ -33,7 +33,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     BrowserAnimationsModule,
 
     MdDialogModule,
-    MdDialog,
+
     MdDialogRef,
     MD_DIALOG_DATA,
     MdButtonModule,
