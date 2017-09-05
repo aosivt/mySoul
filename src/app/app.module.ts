@@ -22,6 +22,6 @@ import { TableFilteringExample } from './tabFilter/tableFilteringExample.compone
 
   ],
   providers: [],
-  bootstrap: [AppComponent,TableBasicExample]
+  bootstrap: [AppComponent,TableBasicExample,TableFilteringExample]
 })
 export class AppModule { }
