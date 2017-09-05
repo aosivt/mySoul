@@ -9,11 +9,30 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <app-upload></app-upload>
   <app-root></app-root>
   <app-test-dialog></app-test-dialog>
   <app-tab></app-tab>
   <app-tab-filter></app-tab-filter>
   <app-tab-sort></app-tab-sort>
+  <style is="custom-style">
+  vaadin-upload.thick-border {
+    --primary-color: #396;
+    --dark-primary-color: #063;
+    --light-primary-color: #6c9;
+    --error-color: darkred;
 
+    border: 2px solid #ccc;
+    padding: 14px;
+    background: #eee;
+    border-radius: 0;
+  }
+
+  vaadin-upload.thick-border[dragover] {
+    border-color: #396;
+  }
+</style>
+
+  <vaadin-upload class="thick-border"></vaadin-upload>
 </body>
 </html>
