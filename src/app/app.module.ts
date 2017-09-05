@@ -3,7 +3,15 @@ import { NgModule } from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {MdButtonModule,MdTableModule, MdInputModule,MdSortModule,MdDialogModule, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MdButtonModule,
+        MdTableModule,
+        MdInputModule,
+        MdSortModule,
+        MdDialogModule,
+        MdDialog,
+        MdDialogRef,
+        MD_DIALOG_DATA
+      } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TableBasicExample } from './tab/tab.component';
@@ -25,7 +33,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     BrowserAnimationsModule,
 
     MdDialogModule,
-
+    MdDialog,
     MdDialogRef,
     MD_DIALOG_DATA,
     MdButtonModule,
@@ -40,6 +48,7 @@ import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dial
     TableFilteringExample,
     DialogOverviewExample,
     DialogOverviewExampleDialog,
-    TableSortingExample]
+    TableSortingExample
+  ]
 })
 export class AppModule { }
