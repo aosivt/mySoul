@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { TableBasicExample } from './tab/tab.component';
 import { TableFilteringExample } from './tabFilter/tableFilteringExample.component';
 import { TableSortingExample } from './tabSort/tableSort.component';
-import { DialogOverviewExample } from './dialog/dialog.component';
+import { DialogOverviewExample,DialogOverviewExampleDialog } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { DialogOverviewExample } from './dialog/dialog.component';
     TableFilteringExample,
     TableSortingExample,
     DialogOverviewExample,
+    DialogOverviewExampleDialog,
     TableBasicExample
   ],
   imports: [
@@ -33,6 +34,12 @@ import { DialogOverviewExample } from './dialog/dialog.component';
     MdTableModule
   ],
   providers: [],
-  bootstrap: [AppComponent,TableBasicExample,TableFilteringExample,TableSortingExample]
+  bootstrap: [
+    AppComponent,
+    TableBasicExample,
+    TableFilteringExample,
+    DialogOverviewExample,
+    DialogOverviewExampleDialog,
+    TableSortingExample]
 })
 export class AppModule { }
