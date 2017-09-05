@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MdButtonModule} from '@angular/material';
+import {DataSource} from '@angular/cdk/collections';
+import {Observable} from 'rxjs/Observable';
+import {MdButtonModule,MdTableModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { TableBasicExample } from './tab/table-basic-example';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableBasicExample
   ],
   imports: [
     BrowserModule,
-    MdButtonModule
+    MdButtonModule,
+    MdTableModule
 
   ],
   providers: [],
