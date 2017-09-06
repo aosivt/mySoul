@@ -42,7 +42,7 @@ import {
     HttpModule,
 
     MdDialogModule,
-    MdButtonModule,[jhj
+    MdButtonModule,
     MdInputModule,
     MdCheckboxModule,
     MdTabsModule,
