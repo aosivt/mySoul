@@ -51,7 +51,7 @@ import {
   ],
   providers: [TestService],
   bootstrap: [
-    AppComponent
+    AppComponent,DialogOverviewExampleDialog
   ]
 })
 export class AppModule { }
