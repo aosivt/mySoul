@@ -36,7 +36,7 @@ const data: Element[] = [
  * we return a stream that contains only one set of data that doesn't change.
  */
 export class ExampleDataSource extends DataSource<any> {
-
+private http: Http;
 private apiURL = 'http://localhost:8080/test';
 
 getData(){
