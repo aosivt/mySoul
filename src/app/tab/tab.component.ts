@@ -69,7 +69,7 @@ export class ExampleDataSource extends DataSource<any> {
 export class TestService {
   constructor(private jsonp: Jsonp) { }
   // constructor(private http: Http) { }
-  private apiURL = 'http://localhost:8080/test';
+  private apiURL = 'http://localhost:8080/test/';
 
   getData(){
     let params = new URLSearchParams();
