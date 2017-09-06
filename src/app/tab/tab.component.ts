@@ -1,5 +1,5 @@
 import {Component,Injectable} from '@angular/core';
-import { Jsonp, URLSearchParams, Http, Response } from '@angular/http';
+import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -25,6 +25,16 @@ export interface Element {
   symbol: string;
 }
 
+export class TestObjectService {
+    constructor(
+        public position: number,
+        public name:     string,
+        public weight:   number,
+        public symbol:   string
+        ){}
+}
+
+
 const data: Element[] = [
   {position: 21, name: 'того', weight: 555, symbol: 'ЕЕЕЕ'},
 ];
@@ -46,19 +56,19 @@ export class ExampleDataSource extends DataSource<any> {
         console.log("checkAddDataTemp");
     return checkData;
   }
-  checkAddTestObjectFromService(checkData:Element[]):Element[] {
+  checkAddTestObjectFromService(checkData:Element[]) {
     console.log("checkAddTestObjectFromService");
     // let testService = new TestService(new Jsonp());
     let testService = new TestService(new Http());
     console.log(testService.getCont());
-    return checkData;
+    ;
   }
 
   connect(): Observable<Element[]> {
     var dataTemp:Element[];
     dataTemp = data;
     dataTemp = this.checkAddDataTemp(dataTemp);
-    dataTemp = this.checkAddTestObjectFromService(dataTemp);
+    this.checkAddTestObjectFromService(dataTemp);
     dataTemp.push({position: 0, name: 'ого', weight: 555, symbol: 'ЕЕЕЕ'},);
     return Observable.of(dataTemp);
   }
@@ -98,7 +108,16 @@ export class TestService {
       console.log(data);
     });
   }
+  getComments() : Observable<TestObjectService[]> {
 
+      // ...using get request
+      return this.http.get('http://192.168.0.3:8080/test' + "?test='t'")
+                     // ...and calling .json() on the response to return data
+                      .map((res:Response) => res.json())
+                      //...errors if any
+                      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
 }
 /**  Copyright 2017 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
