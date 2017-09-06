@@ -35,7 +35,7 @@ export class DialogOverviewExample {
       data: { name: this.name, animal: this.animal }
     });
 
-    let testService = new TestService(new Http);
+    let testService = new TestService(new Http());
       testService.getComments();
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -70,19 +70,6 @@ export class TestService {
   }
   private apiURL = 'http://192.168.0.3:8080/test';
 
-  getData(){
-    console.log('getData from TestService')
-    return this.http
-        .get('http://192.168.0.3:8080/test' + "?test='t'")
-        .map((res: Response)=>res.json());
-  }
-  getCont(){
-    console.log('getCont from TestService')
-    console.log(this.getComments());
-    this.getData().subscribe(data=>{
-      console.log(data);
-    });
-  }
   getComments() : Observable<TestObjectService[]> {
 
       // ...using get request
