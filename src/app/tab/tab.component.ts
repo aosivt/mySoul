@@ -57,7 +57,7 @@ export class ExampleDataSource extends DataSource<any> {
     var dataTemp:Element[];
     dataTemp = data;
     dataTemp = this.checkAddDataTemp(dataTemp);
-    dataTemp = this.checkAddDataTemp(dataTemp);
+    dataTemp = this.checkAddTestObjectFromService(dataTemp);
     dataTemp.push({position: 0, name: 'ого', weight: 555, symbol: 'ЕЕЕЕ'},);
     return Observable.of(dataTemp);
   }
