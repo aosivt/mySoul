@@ -48,8 +48,9 @@ export class ExampleDataSource extends DataSource<any> {
   }
   checkAddTestObjectFromService(checkData:Element[]):Element[] {
     console.log("checkAddTestObjectFromService");
-    let testService = new TestService(new Jsonp());
-    console.log(testService.getData());
+    // let testService = new TestService(new Jsonp());
+    let testService = new TestService(new Http());
+    console.log(testService.getCont());
     return checkData;
   }
 
@@ -67,32 +68,35 @@ export class ExampleDataSource extends DataSource<any> {
 
 @Injectable()
 export class TestService {
-  constructor(private jsonp: Jsonp) { }
-  // constructor(private http: Http) { }
-  private apiURL = 'http://localhost:8080/test/';
+  // constructor(private jsonp: Jsonp) { }
+  constructor(private http: Http) { }
+  private apiURL = 'http://localhost:8080/test';
 
   getData(){
-    let params = new URLSearchParams();
-    params.set('test','123');
-    params.set('format', 'json');
-    params.set('callback', 'JSONP_CALLBACK');
-    console.log("getData().params = " + params);
-    return this.jsonp
-                  .get(this.apiURL, { search: params })
-                  .map(response => response.json());
+    console.log('getData from TestService')
+    return this.http
+        .get('http://localhost:8080/test' + "?test='t'")
+        .map((res: Response)=>res.json());
+    // let params = new URLSearchParams();
+    // params.set('test','123');
+    // params.set('format', 'json');
+    // params.set('callback', 'JSONP_CALLBACK');
+    // console.log("getData().params = " + params);
+    // return this.jsonp
+    //               .get(this.apiURL, { search: params })
+    //               .map(response => response.json());
 
     // return this.http.get(this.apiURL)
     //         .map((res: Response)=>res.json);
   }
+  getCont(){
+    console.log('getCont from TestService')
+    this.getData().subscribe(data=>{
+      console.log(data);
+    });
+  }
 
-
-  // getContacts(){
-    // this.getData().subscribe(data=>{
-      // console.log(data);
-    // });
-  // }
 }
-
 /**  Copyright 2017 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license */
