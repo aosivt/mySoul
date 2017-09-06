@@ -3,6 +3,9 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
+
+import { TestService } from './dialog/serv/test.service';
+
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 /**
@@ -11,16 +14,10 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-test-dialog',
   templateUrl: 'dialog-overview-example.html'
+
 })
 
-export class TestObjectService {
-    constructor(
-        public position: number,
-        public name:     string,
-        public weight:   number,
-        public symbol:   string
-        ){}
-}
+
 
 export class DialogOverviewExample {
 
@@ -28,7 +25,7 @@ export class DialogOverviewExample {
   name: string;
 
   constructor(public dialog: MdDialog,
-  private testService: TestService ) {}
+  public  testService: TestService ) {}
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
@@ -62,24 +59,4 @@ export class DialogOverviewExampleDialog {
     this.dialogRef.close();
   }
 
-}
-
-@Injectable()
-export class TestService {
-  // constructor(private jsonp: Jsonp) { }
-
-  public constructor(private http: Http) {
-
-  }
-  private apiURL = 'http://192.168.0.3:8080/test';
-
-  getComments() : Observable<TestObjectService[]> {
-
-      // ...using get request
-      return this.http.get('http://192.168.0.3:8080/test')
-                     // ...and calling .json() on the response to return data
-                      .map((res:Response) => res.json());
-
-
-  }
 }

@@ -51,12 +51,7 @@ import {
   ],
   providers: [TestService],
   bootstrap: [
-    AppComponent,
-    TableBasicExample,
-    TableFilteringExample,
-    DialogOverviewExample,
-    DialogOverviewExampleDialog,
-    TableSortingExample
+    AppComponent
   ]
 })
 export class AppModule { }
