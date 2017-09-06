@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
-import {TestService} from './dialog/serv/test.service.ts';
+
 /**
  * @title Dialog Overview
  */
@@ -26,8 +26,8 @@ export class DialogOverviewExample {
   name: string;
 
   constructor(public dialog: MdDialog
-    // ,
-  // private  testService: TestService
+    ,
+  private  testService: TestService
 ) {}
 
   openDialog(): void {
@@ -37,9 +37,9 @@ export class DialogOverviewExample {
     });
 
 
-      // this.testService.getComments().subscribe(resultService=>{
-      // console.log(resultService);
-      // });
+      this.testService.getComments().subscribe(resultService=>{
+      console.log(resultService);
+      });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
