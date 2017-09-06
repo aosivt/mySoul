@@ -22,8 +22,9 @@ export class DialogOverviewExample {
   animal: string;
   name: string;
 
-  constructor(public dialog: MdDialog,
-  // public  testService: TestService 
+  constructor(public dialog: MdDialog
+    // ,
+  // public  testService: TestService
 ) {}
 
   openDialog(): void {
