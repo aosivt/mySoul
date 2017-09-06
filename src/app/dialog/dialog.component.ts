@@ -65,7 +65,7 @@ export class DialogOverviewExampleDialog {
 export class TestService {
   // constructor(private jsonp: Jsonp) { }
 
-  public constructor(@Inject(Http) private http: Http) {
+  public constructor(private http: Http) {
 
   }
   private apiURL = 'http://192.168.0.3:8080/test';
