@@ -69,7 +69,10 @@ export class ExampleDataSource extends DataSource<any> {
 @Injectable()
 export class TestService {
   // constructor(private jsonp: Jsonp) { }
-  constructor(private http: Http) { }
+
+  public constructor(private http: Http) {
+      this.http = http;
+  }
   private apiURL = 'http://192.168.0.3:8080/test';
 
   getData(){
