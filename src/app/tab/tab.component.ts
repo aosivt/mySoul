@@ -112,7 +112,7 @@ export class TestService {
   getComments() : Observable<TestObjectService[]> {
 
       // ...using get request
-      return this.http.get('http://192.168.0.3:8080/test' + "?test='t'")
+      return this.http.get('http://192.168.0.3:8080/test')
                      // ...and calling .json() on the response to return data
                       .map((res:Response) => res.json())
                       //...errors if any
