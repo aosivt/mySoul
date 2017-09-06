@@ -1,6 +1,10 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject,Injectable} from '@angular/core';
 import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
-
+import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
+import {DataSource} from '@angular/cdk/collections';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
 /**
  * @title Dialog Overview
  */
@@ -8,6 +12,16 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
   selector: 'app-test-dialog',
   templateUrl: 'dialog-overview-example.html'
 })
+
+export class TestObjectService {
+    constructor(
+        public position: number,
+        public name:     string,
+        public weight:   number,
+        public symbol:   string
+        ){}
+}
+
 export class DialogOverviewExample {
 
   animal: string;
@@ -21,6 +35,8 @@ export class DialogOverviewExample {
       data: { name: this.name, animal: this.animal }
     });
 
+    let testService = new TestService(new Http);
+      testService.getComments();
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
@@ -43,4 +59,38 @@ export class DialogOverviewExampleDialog {
     this.dialogRef.close();
   }
 
+}
+
+@Injectable()
+export class TestService {
+  // constructor(private jsonp: Jsonp) { }
+
+  public constructor(@Inject(Http) private http: Http) {
+
+  }
+  private apiURL = 'http://192.168.0.3:8080/test';
+
+  getData(){
+    console.log('getData from TestService')
+    return this.http
+        .get('http://192.168.0.3:8080/test' + "?test='t'")
+        .map((res: Response)=>res.json());
+  }
+  getCont(){
+    console.log('getCont from TestService')
+    console.log(this.getComments());
+    this.getData().subscribe(data=>{
+      console.log(data);
+    });
+  }
+  getComments() : Observable<TestObjectService[]> {
+
+      // ...using get request
+      return this.http.get('http://192.168.0.3:8080/test')
+                     // ...and calling .json() on the response to return data
+                      .map((res:Response) => res.json())
+                      //...errors if any
+                      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
 }
