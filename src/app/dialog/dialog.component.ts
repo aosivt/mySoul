@@ -4,8 +4,6 @@ import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 
-import { TestService } from './dialog/serv/test.service';
-
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 /**
