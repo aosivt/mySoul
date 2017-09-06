@@ -36,28 +36,20 @@ const data: Element[] = [
  * we return a stream that contains only one set of data that doesn't change.
  */
 export class ExampleDataSource extends DataSource<any> {
-private http: Http;
-private apiURL = 'http://localhost:8080/test?test=1';
 
-getData(){
-  return this.http.get(this.apiURL)
-  .map((res: Response)=>res.json);
-}
-getContacts(){
-  this.getData().subscribe(data=>{
-    console.log(data);
-  });
-}
+
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */
 
   checkAddDataTemp(checkData:Element[]):Element[] {
     checkData.push({position: 1, name: 'Ну вот вроде как получилось)))', weight: 555, symbol: 'ЕЕЕЕ'},);
+        console.log("checkAddDataTemp");
     return checkData;
   }
   checkAddTestObjectFromService(checkData:Element[]):Element[] {
-    checkData.push(this.getData());
-    this.getContacts();
+    console.log("checkAddTestObjectFromService");
+    let testService = new TestService(new Jsonp());
+    console.log(testService.getData());
     return checkData;
   }
 
@@ -73,6 +65,33 @@ getContacts(){
   disconnect() {}
 }
 
+@Injectable()
+export class TestService {
+  constructor(private jsonp: Jsonp) { }
+  // constructor(private http: Http) { }
+  private apiURL = 'http://localhost:8080/test';
+
+  getData(){
+    let params = new URLSearchParams();
+    params.set('test','123');
+    params.set('format', 'json');
+    params.set('callback', 'JSONP_CALLBACK');
+    console.log("getData().params = " + params);
+    return this.jsonp
+                  .get(this.apiURL, { search: params })
+                  .map(response => response.json());
+
+    // return this.http.get(this.apiURL)
+    //         .map((res: Response)=>res.json);
+  }
+
+
+  // getContacts(){
+    // this.getData().subscribe(data=>{
+      // console.log(data);
+    // });
+  // }
+}
 
 /**  Copyright 2017 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
