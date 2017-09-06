@@ -3,7 +3,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
-import {TestService} from './dialog/serv/test.service.ts';
+
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
@@ -12,8 +12,7 @@ import 'rxjs/add/operator/map';
  */
 @Component({
   selector: 'app-test-dialog',
-  templateUrl: 'dialog-overview-example.html',
-  providers: {TestService}
+  templateUrl: 'dialog-overview-example.html'
 })
 
 
@@ -24,7 +23,8 @@ export class DialogOverviewExample {
   name: string;
 
   constructor(public dialog: MdDialog,
-  public  testService: TestService ) {}
+  // public  testService: TestService 
+) {}
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
@@ -33,8 +33,8 @@ export class DialogOverviewExample {
     });
 
 
-      this.testService.getComments().subscribe(resultService=>{
-      console.log(resultService);
+      // this.testService.getComments().subscribe(resultService=>{
+      // console.log(resultService);
       });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
