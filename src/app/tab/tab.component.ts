@@ -37,7 +37,7 @@ const data: Element[] = [
  */
 export class ExampleDataSource extends DataSource<any> {
 private http: Http;
-private apiURL = 'http://localhost:8080/test';
+private apiURL = 'http://localhost:8080/test?test=1';
 
 getData(){
   return this.http.get(this.apiURL)
