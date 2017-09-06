@@ -1,18 +1,21 @@
 import {Component, Inject,Injectable} from '@angular/core';
 import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable} from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs/Observable';
 
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
+
+import {TestService} from './dialog/serv/test.service.ts';
 /**
  * @title Dialog Overview
  */
 @Component({
   selector: 'app-test-dialog',
   templateUrl: 'dialog-overview-example.html'
+
 })
 
 
@@ -24,7 +27,7 @@ export class DialogOverviewExample {
 
   constructor(public dialog: MdDialog
     // ,
-  // public  testService: TestService
+  // private  testService: TestService
 ) {}
 
   openDialog(): void {
