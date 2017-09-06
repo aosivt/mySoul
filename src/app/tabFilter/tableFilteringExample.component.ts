@@ -44,19 +44,19 @@ const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
   'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
 export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
-}
+    id: string;
+    name: string;
+    progress: string;
+    color: string;
+  }
 
-/** An example database that the data source uses to retrieve data for the table. */
-export class ExampleDatabase {
-  /** Stream that emits whenever the data has been modified. */
-  dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
-  get data(): UserData[] { return this.dataChange.value; }
+  /** An example database that the data source uses to retrieve data for the table. */
+  export class ExampleDatabase {
+    /** Stream that emits whenever the data has been modified. */
+    dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
+    get data(): UserData[] { return this.dataChange.value; }
 
-  constructor() {
+    constructor() {
     // Fill up the database with 100 users.
     for (let i = 0; i < 100; i++) { this.addUser(); }
   }
