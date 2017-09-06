@@ -3,6 +3,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
+import {TestService} from './dialog/serv/test.service.ts';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
@@ -11,8 +12,8 @@ import 'rxjs/add/operator/map';
  */
 @Component({
   selector: 'app-test-dialog',
-  templateUrl: 'dialog-overview-example.html'
-
+  templateUrl: 'dialog-overview-example.html',
+  providers: {TestService}
 })
 
 
