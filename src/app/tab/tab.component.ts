@@ -104,6 +104,7 @@ export class TestService {
   }
   getCont(){
     console.log('getCont from TestService')
+    console.log(this.getComments());
     this.getData().subscribe(data=>{
       console.log(data);
     });
