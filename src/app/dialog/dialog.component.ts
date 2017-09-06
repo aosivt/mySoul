@@ -3,6 +3,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
+import { TestService } from './dialog/serv/test.service';
 
 
 import 'rxjs/add/observable/of';
