@@ -81,7 +81,7 @@ export class TestService {
   // constructor(private jsonp: Jsonp) { }
 
   public constructor(private http: Http) {
-      this.http = http;
+
   }
   private apiURL = 'http://192.168.0.3:8080/test';
 
