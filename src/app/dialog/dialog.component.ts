@@ -27,7 +27,8 @@ export class DialogOverviewExample {
   animal: string;
   name: string;
 
-  constructor(public dialog: MdDialog) {}
+  constructor(public dialog: MdDialog,
+  private testService: TestService ) {}
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
@@ -35,9 +36,9 @@ export class DialogOverviewExample {
       data: { name: this.name, animal: this.animal }
     });
 
-    let testService = new TestService(new Http());
-      testService.getComments().subscribe(resultService=>{
-      console.log(resultService);  
+
+      this.testService.getComments().subscribe(resultService=>{
+      console.log(resultService);
       });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
