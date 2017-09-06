@@ -14,7 +14,7 @@ import {
           MdSortModule,
           MdDialogModule
       }                             from '@angular/material';
-import { TestService }                from "./dialog/dialog.component";
+import { TestService }                from "./dialog/serv/test.service";
 import {  HttpModule  }             from '@angular/http';
 import {  BrowserAnimationsModule}  from '@angular/platform-browser/animations';
 import {  AppComponent }            from './app.component';
