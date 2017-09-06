@@ -70,12 +70,12 @@ export class ExampleDataSource extends DataSource<any> {
 export class TestService {
   // constructor(private jsonp: Jsonp) { }
   constructor(private http: Http) { }
-  private apiURL = 'http://localhost:8080/test';
+  private apiURL = 'http://192.168.0.3:8080/test';
 
   getData(){
     console.log('getData from TestService')
     return this.http
-        .get('http://localhost:8080/test' + "?test='t'")
+        .get('http://192.168.0.3:8080/test' + "?test='t'")
         .map((res: Response)=>res.json());
     // let params = new URLSearchParams();
     // params.set('test','123');
