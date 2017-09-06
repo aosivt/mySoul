@@ -36,7 +36,7 @@ export class DialogOverviewExample {
 
       // this.testService.getComments().subscribe(resultService=>{
       // console.log(resultService);
-      });
+      // });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
