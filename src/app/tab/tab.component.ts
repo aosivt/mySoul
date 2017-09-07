@@ -21,7 +21,7 @@ export class TableBasicExample {
   constructor( public testService: TestService){
     this.testService.getComments().subscribe(resultService=>{
     console.log(resultService);
-    this.dataSource.addFromTestService(resultService);
+    // this.dataSource.addFromTestService(resultService);
     });
   }
 
