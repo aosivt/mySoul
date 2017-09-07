@@ -17,10 +17,12 @@ import { TestService }  from "../dialog/serv/test.service";
 })
 export class TableBasicExample {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new ExampleDataSource();
+  dataSource:ExampleDataSource;
   constructor( public testService: TestService){
+
     this.testService.getComments().subscribe(resultService=>{
     console.log(resultService);
+    this.dataSource = new ExampleDataSource();
     this.dataSource.addFromTestService(Object.setPrototypeOf(resultService,TestObjectService.prototype));
     });
   }
