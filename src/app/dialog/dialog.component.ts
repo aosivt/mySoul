@@ -3,7 +3,7 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 import { Jsonp, URLSearchParams, Http, Response,Headers, RequestOptions } from '@angular/http';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
-import { TestService }                from "./serv/test.service";
+// import { TestService }                from "./serv/test.service";
 
 
 import 'rxjs/add/observable/of';
@@ -18,9 +18,6 @@ import 'rxjs/add/operator/map';
   templateUrl: 'dialog-overview-example.html'
 
 })
-
-
-
 export class DialogOverviewExample {
 
   animal: string;
