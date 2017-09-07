@@ -17,14 +17,20 @@ import { TestService }  from "../dialog/serv/test.service";
 })
 export class TableBasicExample {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
-
+  tableSource:Element[];
   constructor( public testService: TestService){
-    let dataSource:ExampleDataSource;
+
     this.testService.getComments().subscribe(resultService=>{
     console.log(resultService);
+    this.tableSource.push(Object.setPrototypeOf(resultService,TestObjectService.prototype))
+    let dataSource:ExampleDataSource;
     dataSource = new ExampleDataSource();
     dataSource.addFromTestService(Object.setPrototypeOf(resultService,TestObjectService.prototype));
     });
+  }
+
+  getTableSource():Element[]{
+    return this.tableSource;
   }
 
 
@@ -68,9 +74,11 @@ private dataSources :Element[];
         console.log("checkAddDataTemp");
     return checkData;
   }
-  checkAddTestObjectFromService(checkData:Element[]) {
+  checkAddTestObjectFromService(checkData:Element[]):Element[] {
     console.log("checkAddTestObjectFromService");
-
+    checkData.push(getTableSource());
+        console.log("checkAddDataTemp");
+    return checkData;
     // let testService = new TestService(new Jsonp());
 
     ;
@@ -90,7 +98,7 @@ private dataSources :Element[];
     console.log(this.getDataSources());
     // this.dataSources.push(e);
   }
-getDataSources(){
+getDataSources():Element[]{
   return this.dataSources;
 }
   disconnect() {}
