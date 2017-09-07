@@ -22,8 +22,9 @@ import {  TableBasicExample }       from './tab/tab.component';
 import {  TableFilteringExample }   from './tabFilter/tableFilteringExample.component';
 import {  TableSortingExample }     from './tabSort/tableSort.component';
 import {
-          DialogOverviewExample,
-          DialogOverviewExampleDialog
+          DialogOverviewExample
+          // ,
+          // DialogOverviewExampleDialog
                                   } from './dialog/dialog.component';
 
 @NgModule({
@@ -32,7 +33,7 @@ import {
     TableFilteringExample,
     TableSortingExample,
     DialogOverviewExample,
-    DialogOverviewExampleDialog,
+    // DialogOverviewExampleDialog,
     TableBasicExample
   ],
   imports: [
@@ -51,7 +52,8 @@ import {
   ],
   providers: [TestService],
   bootstrap: [
-    AppComponent,DialogOverviewExampleDialog
+    AppComponent
+    // ,DialogOverviewExampleDialog
   ]
 })
 export class AppModule { }
