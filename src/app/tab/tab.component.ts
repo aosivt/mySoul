@@ -18,6 +18,14 @@ import { TestService }  from "../dialog/serv/test.service";
 export class TableBasicExample {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
   dataSource = new ExampleDataSource();
+  constructor( public testService: TestService){
+    this.testService.getComments().subscribe(resultService=>{
+    console.log(resultService);
+    this.dataSource.addFromTestService(resultService);
+    });
+  }
+
+
 }
 
 export interface Element {
@@ -27,7 +35,7 @@ export interface Element {
   symbol: string;
 }
 
-export class TestObjectService {
+export class TestObjectService implements Element {
     constructor(
         public position: number,
         public name:     string,
@@ -48,8 +56,9 @@ const data: Element[] = [
  * we return a stream that contains only one set of data that doesn't change.
  */
 export class ExampleDataSource extends DataSource<any> {
+private dataSources :Element[];
 
-constructor( private testService: TestService){}
+
 /** Connect function called by the table to retrieve one stream containing the data to render. */
 
   checkAddDataTemp(checkData:Element[]):Element[] {
@@ -59,10 +68,7 @@ constructor( private testService: TestService){}
   }
   checkAddTestObjectFromService(checkData:Element[]) {
     console.log("checkAddTestObjectFromService");
-    this.testService.getComments().subscribe(resultService=>{
-    console.log(resultService);
-    checkData.push(resultService);
-    });
+
     // let testService = new TestService(new Jsonp());
 
     ;
@@ -77,6 +83,12 @@ constructor( private testService: TestService){}
     return Observable.of(dataTemp);
   }
 
+  addFromTestService(e:Element){
+    this.dataSources.push(e);
+  }
+getDataSources(){
+  return this.dataSources;
+}
   disconnect() {}
 }
 
