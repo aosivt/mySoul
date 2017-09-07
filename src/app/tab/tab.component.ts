@@ -85,8 +85,8 @@ private dataSources :Element[];
 
   addFromTestService(e:Element){
     console.log(e);
-    console.log(this.dataSources);
-    this.dataSources.push(e);
+    console.log(this.getDataSources());
+    // this.dataSources.push(e);
   }
 getDataSources(){
   return this.dataSources;
