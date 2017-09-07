@@ -14,7 +14,7 @@ import {
           MdSortModule,
           MdDialogModule
       }                             from '@angular/material';
-import { TestService }                from "./dialog/serv/test.service";
+import {  TestService }             from "./dialog/serv/test.service";
 import {  HttpModule  }             from '@angular/http';
 import {  BrowserAnimationsModule}  from '@angular/platform-browser/animations';
 import {  AppComponent }            from './app.component';
@@ -23,8 +23,8 @@ import {  TableFilteringExample }   from './tabFilter/tableFilteringExample.comp
 import {  TableSortingExample }     from './tabSort/tableSort.component';
 import {
           DialogOverviewExample
-          // ,
-          // DialogOverviewExampleDialog
+          ,
+          DialogOverviewExampleDialog
                                   } from './dialog/dialog.component';
 
 @NgModule({
@@ -50,10 +50,7 @@ import {
     MdSortModule,
     MdTableModule
   ],
-  providers: [TestService],
-  bootstrap: [
-    AppComponent
-    // ,DialogOverviewExampleDialog
-  ]
+  providers: [ TestService  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
