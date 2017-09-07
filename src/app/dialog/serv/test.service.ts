@@ -20,7 +20,9 @@ export class TestService {
       // ...using get request
       return this.http.get('http://192.168.0.3:8080/test')
                      // ...and calling .json() on the response to return data
-                      .map((res:Response) => res.json());
+                      // .map((res:Response) =>
+                      // res.json()
+                    // );
   }
 }
 
