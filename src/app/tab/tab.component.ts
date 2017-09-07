@@ -5,6 +5,8 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
+import { TestService }  from "../dialog/serv/test.service";
+
 /**
  * @title Basic table
  */
@@ -47,9 +49,8 @@ const data: Element[] = [
  */
 export class ExampleDataSource extends DataSource<any> {
 
-
-
-  /** Connect function called by the table to retrieve one stream containing the data to render. */
+constructor( private testService: TestService){}
+/** Connect function called by the table to retrieve one stream containing the data to render. */
 
   checkAddDataTemp(checkData:Element[]):Element[] {
     checkData.push({position: 1, name: 'Ну вот вроде как получилось)))', weight: 555, symbol: 'ЕЕЕЕ'},);
@@ -58,6 +59,10 @@ export class ExampleDataSource extends DataSource<any> {
   }
   checkAddTestObjectFromService(checkData:Element[]) {
     console.log("checkAddTestObjectFromService");
+    this.testService.getComments().subscribe(resultService=>{
+    console.log(resultService);
+    checkData.push(resultService);
+    });
     // let testService = new TestService(new Jsonp());
 
     ;

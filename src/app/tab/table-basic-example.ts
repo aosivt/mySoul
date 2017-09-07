@@ -57,7 +57,6 @@ export class ExampleDataSource extends DataSource<any> {
   connect(): Observable<Element[]> {
     return Observable.of(data);
   }
-
   disconnect() {}
 }
 
