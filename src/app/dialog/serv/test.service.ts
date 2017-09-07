@@ -16,9 +16,9 @@ export class TestService {
   private apiURL = 'http://192.168.0.3:8080/test';
 
   getComments() : Observable<TestObjectService[]> {
-
+console.log("getComments inside TestService");
       // ...using get request
-      return this.http.get('http://192.168.0.3:8080/test')
+      return this.http.get('http://192.168.0.3:8080/test');
                      // ...and calling .json() on the response to return data
                       // .map((res:Response) =>
                       // res.json()
