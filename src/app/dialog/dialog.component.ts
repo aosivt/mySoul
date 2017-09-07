@@ -27,9 +27,8 @@ export class DialogOverviewExample {
   name: string;
 
   constructor(public dialog: MdDialog
-    ,
-  private  testService: TestService
-) {}
+    // ,  private  testService: TestService
+  ) {}
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
